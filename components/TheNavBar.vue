@@ -7,7 +7,7 @@
           <input type="text" placeholder="Tìm kiếm" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <NuxtLink href="#" class="login">Đăng nhập</NuxtLink>
+        <NuxtLink href="/login" class="login">Đăng nhập</NuxtLink>
         <NuxtLink href="#" class="lang"><span>VN</span></NuxtLink>
         <NuxtLink href="#" class="lang"><span>EN</span></NuxtLink>
       </div>
@@ -20,7 +20,7 @@
         </div>
         <nav class="main-nav">
           <ul>
-            <li><a href="#">Trang chủ</a></li>
+            <li><a href="/">Trang chủ</a></li>
             <li class="dropdown">
               <a href="#" @click.prevent="toggleDropdown('diemden')">Điểm đến <span>▼</span></a>
               <ul class="dropdown-menu" :class="{ show: dropdowns.diemden }">

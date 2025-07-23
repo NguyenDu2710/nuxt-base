@@ -3,11 +3,7 @@
     <TheNavBar />
     <!-- Main Content -->
     <main class="main-content">
-      <TravelGuideView />
-      <TopNewsView />
-      <TravelTourView />
-      <MapView />
-      <VietNam />
+      <NuxtPage />
     </main>
     <!-- Footer -->
     <TheFooter />

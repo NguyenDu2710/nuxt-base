@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@pinia/nuxt', '@nuxt/image'],
+  modules: ['@pinia/nuxt'],
   runtimeConfig: {
     apiSecret: '123456',
     public: {
@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    '~/css/main.css',
+    '~/css/main.scss',
   ],
   components: [
     '~/components',

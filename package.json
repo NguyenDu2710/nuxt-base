@@ -12,6 +12,7 @@
     "pinia": "^3.0.3"
   },
   "devDependencies": {
+    "sass-embedded": "^1.89.2",
     "vue-tsc": "^2.2.12"
   }
 }
