@@ -8,7 +8,7 @@ export const useUserStore = defineStore('user', {
   actions: {
     async fetchUsers() {
       const { data } = await useFetch('/api/users')
-      this.users = data.value || []
+      this.users = Array.isArray(data.value) ? data.value : []
     },
     async addUser(name: string) {
       await $fetch('/api/users', {

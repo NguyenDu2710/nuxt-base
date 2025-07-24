@@ -1,6 +1,7 @@
+import { getUsers } from '~/server/services/userService'
+import { apiServer } from '~/server/utils/apiServer'
 
-import { getUsers } from '~/services/userService'
-
-export default defineEventHandler(() => {
-  return getUsers()
-})
+export default apiServer(async (event) => {
+  const user = event.context.user
+  return await getUsers()
+}, { auth: true })

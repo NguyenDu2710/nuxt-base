@@ -16,14 +16,14 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue';
 
 const username = ref('')
 const password = ref('')
 const error = ref('')
 
-function handleLogin() {
+const handleLogin = () => {
   if (username.value === 'admin' && password.value === '123456') {
     error.value = ''
     // Xử lý đăng nhập thành công, ví dụ chuyển trang
@@ -32,6 +32,10 @@ function handleLogin() {
     error.value = 'Tên đăng nhập hoặc mật khẩu không đúng'
   }
 }
+
+definePageMeta({
+  middleware: 'auth'
+})
 </script>
 
 <style scoped>
