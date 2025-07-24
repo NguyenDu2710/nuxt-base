@@ -16,7 +16,7 @@
     <header class="header">
       <div class="logo-menu">
         <div class="logo">
-          <img src="https://tayho360.vn/upload/admin/files/logo-header.png" alt="Logo" />
+          <img src="/public/images/Logo.png" alt="Logo" style="width:90px;"/>
         </div>
         <nav class="main-nav">
           <ul>
@@ -52,9 +52,9 @@
             <li class="dropdown">
               <a href="#" @click.prevent="toggleDropdown('trienlam')">Triển lãm <span>▼</span></a>
               <ul class="dropdown-menu" :class="{ show: dropdowns.trienlam }">
-                <li><a href="#">Di sản Hán Nôm Tây Hồ</a></li>
-                <li><a href="#">Bác Hồ với Tây Hồ</a></li>
-                <li><a href="#">Tinh hoa làng nghề truyền thống</a></li>
+                <li><a href="#">Bảo tàng Hà Nội</a></li>
+                <li><a href="#">Đại lộ Thăng Long</a></li>
+                <li><a href="#">Hồ Mễ Trì</a></li>
               </ul>
             </li>
           </ul>
