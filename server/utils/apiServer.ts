@@ -5,7 +5,7 @@ interface ApiOptions {
 }
 
 export function apiServer(
-  handler: (event: H3Event) => any | Promise<any>,
+  handler: (event: Event) => any | Promise<any>,
   options: ApiOptions = {}
 ) {
   return defineEventHandler(async (event) => {
