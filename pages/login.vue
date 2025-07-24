@@ -33,9 +33,9 @@ const handleLogin = () => {
   }
 }
 
-definePageMeta({
-  middleware: 'auth'
-})
+// definePageMeta({
+//   middleware: 'auth'
+// })
 </script>
 
 <style scoped>

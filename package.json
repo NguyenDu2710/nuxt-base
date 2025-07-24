@@ -13,6 +13,7 @@
     "pinia": "^3.0.3"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
     "sass-embedded": "^1.89.2",
     "vue-tsc": "^2.2.12"
   }

@@ -5,16 +5,16 @@ export default defineEventHandler(async (event) => {
   const method = event.node.req.method
   const url = event.node.req.url
 
-  const rawToken = getHeader(event, 'authorization')?.replace('Bearer ', '')
+  // const rawToken = getHeader(event, 'authorization')?.replace('Bearer ', '')
 
-  if (!rawToken) {
-    throw createError({ statusCode: 401, message: 'Missing token' })
-  }
+  // if (!rawToken) {
+  //   throw createError({ statusCode: 401, message: 'Missing token' })
+  // }
 
-  try {
-    const user = verifyToken(rawToken)
-    event.context.user = user
-  } catch (err) {
-    throw createError({ statusCode: 401, message: 'Invalid token' })
-  }
+  // try {
+  //   const user = verifyToken(rawToken)
+  //   event.context.user = user
+  // } catch (err) {
+  //   throw createError({ statusCode: 401, message: 'Invalid token' })
+  // }
 })

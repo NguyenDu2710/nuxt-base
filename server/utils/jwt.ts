@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken')
+import jwt from 'jsonwebtoken'
 
 const SECRET_KEY = useRuntimeConfig().jwtSecret || 'your-default-secret'
 
-export function signToken(payload: object, expiresIn = '1d'): string {
+export function signToken(payload: object, expiresIn: jwt.SignOptions['expiresIn'] = '1d'): string {
   return jwt.sign(payload, SECRET_KEY, { expiresIn })
 }
 

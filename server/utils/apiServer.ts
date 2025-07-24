@@ -1,11 +1,12 @@
 import { verifyToken } from '~/server/utils/jwt'
+import type { H3Event } from 'h3'
 
 interface ApiOptions {
   auth?: boolean // Có yêu cầu xác thực không
 }
 
 export function apiServer(
-  handler: (event: Event) => any | Promise<any>,
+  handler: (event: H3Event) => any | Promise<any>,
   options: ApiOptions = {}
 ) {
   return defineEventHandler(async (event) => {
