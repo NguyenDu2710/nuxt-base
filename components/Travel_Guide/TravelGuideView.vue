@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="banner">
-    <h2>CHÀO MỪNG BẠN ĐẾN TÂY HỒ 360</h2>
+    <h2>CHÀO MỪNG BẠN ĐẾN ĐẠI MỔ 360</h2>
     <div class="article-space"></div>
     </section>
 
