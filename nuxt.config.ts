@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
   runtimeConfig: {
     apiSecret: '123456',
     jwtSecret: process.env.JWT_SECRET || 'secret-key',
@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/main.scss',
+    '~/assets/css/tailwind.scss'
   ],
   components: [
     '~/components',

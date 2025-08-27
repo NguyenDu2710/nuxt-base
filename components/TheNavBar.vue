@@ -1,100 +1,23 @@
 <template>
-  <div>
-    <!-- Top Bar -->
-    <div class="topbar">
-      <div class="topbar-right">
-        <form class="search-input">
-          <input type="text" placeholder="Tìm kiếm" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <NuxtLink href="/login" class="login">Đăng nhập</NuxtLink>
-        <NuxtLink href="#" class="lang"><span>VN</span></NuxtLink>
-        <NuxtLink href="#" class="lang"><span>EN</span></NuxtLink>
+  <header class="sticky top-0 z-40 w-full border-b border-white/10 backdrop-blur bg-neutral-950/70">
+    <div class="mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4">
+      <div class="flex items-center gap-3">
+        <div
+          class="size-8 rounded-xl bg-gradient-to-br from-sky-500/80 via-indigo-500/80 to-purple-500/80 shadow-[0_0_40px_-12px_rgba(59,130,246,0.6)]" />
+        <span class="text-sm font-semibold tracking-wide">IT COMPANY</span>
+      </div>
+      <nav class="hidden items-center gap-6 text-sm text-neutral-300 md:flex">
+        <a href="#tech" class="hover:text-white">Công nghệ sử dụng</a>
+        <a href="#products" class="hover:text-white">Sản phẩm</a>
+        <a href="#partners" class="hover:text-white">Case Study</a>
+        <a href="#contact" class="hover:text-white">Liên hệ</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button class="hidden rounded-xl bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20 md:inline-flex">Liên
+          hệ</button>
+        <button class="md:hidden rounded-xl px-2 py-1.5 text-sm text-neutral-300 hover:bg-white/10">☰</button>
       </div>
     </div>
-    <!-- Header & Menu -->
-    <header class="header">
-      <div class="logo-menu">
-        <div class="logo">
-          <img src="/public/images/Logo.png" alt="Logo" style="width:90px;"/>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="/">Trang chủ</a></li>
-            <li class="dropdown">
-              <a href="#" @click.prevent="toggleDropdown('diemden')">Điểm đến <span>▼</span></a>
-              <ul class="dropdown-menu" :class="{ show: dropdowns.diemden }">
-                <li><a href="#">Di tích văn hóa lịch sử</a></li>
-                <li><a href="#">Danh lam</a></li>
-                <li><a href="#">Lễ hội</a></li>
-                <li><a href="#">Làng nghề</a></li>
-                <li><a href="#">Cơ quan hành chính</a></li>
-                <li><a href="#">Trung tâm hội nghị sự kiện</a></li>
-                <li><a href="#">Khách sạn</a></li>
-                <li><a href="#">Nhà hàng quán ăn</a></li>
-                <li><a href="#">Dịch vụ hỗ trợ du lịch</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Sự kiện</a></li>
-            <li class="dropdown">
-              <a href="#" @click.prevent="toggleDropdown('camnang')">Cẩm nang du lịch <span>▼</span></a>
-              <ul class="dropdown-menu" :class="{ show: dropdowns.camnang }">
-                <li><a href="#">Ở đâu?</a></li>
-                <li><a href="#">Ăn gì?</a></li>
-                <li><a href="#">Chơi gì?</a></li>
-                <li><a href="#">Địa điểm nổi bật</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Việt Nam 360</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Tour du lịch</a></li>
-            <li><a href="#">Bản đồ</a></li>
-            <li class="dropdown">
-              <a href="#" @click.prevent="toggleDropdown('trienlam')">Triển lãm <span>▼</span></a>
-              <ul class="dropdown-menu" :class="{ show: dropdowns.trienlam }">
-                <li><a href="#">Bảo tàng Hà Nội</a></li>
-                <li><a href="#">Đại lộ Thăng Long</a></li>
-                <li><a href="#">Hồ Mễ Trì</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  </div>
+  </header>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const dropdowns = ref({
-  diemden: false,
-  camnang: false,
-  trienlam: false
-})
-
-const toggleDropdown = (name) => {
-  Object.keys(dropdowns.value).forEach(key => {
-    dropdowns.value[key] = key === name ? !dropdowns.value[key] : false
-  })
-}
-
-function handleClickOutside(e) {
-  const nav = document.querySelector('.main-nav')
-  if (nav && !nav.contains(e.target)) {
-    dropdowns.value.diemden = false
-    dropdowns.value.camnang = false
-    dropdowns.value.trienlam = false
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-})
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
-</script>
-
-<style scoped>
-</style>
+<script setup lang="ts"></script>
