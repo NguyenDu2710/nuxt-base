@@ -20,7 +20,7 @@
         </div>
 
         <div class="p-2 sm:p-4 items-center flex justify-center">
-          <img class="w-[80%] h-[70vh]" :src="src" />
+          <img class="w-[80%] h-[70vh]" :src="`${base}images/products${src}`" />
         </div>
 
         <div class="flex items-center justify-between gap-3 px-4 py-3 border-t border-neutral-200 dark:border-neutral-800">
@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+const base = useRuntimeConfig().app.baseURL
 const props = defineProps<{
   open: boolean
   tip?: string

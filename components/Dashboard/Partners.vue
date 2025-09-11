@@ -21,7 +21,7 @@
         <SwiperSlide v-for="n in partners" :key="n.name">
           <div class="rounded-xl h-32 border border-white/30 bg-white/20 p-6 text-center text-sm text-amber-900 flex flex-row items-center justify-center">
             <img
-              :src="n.img"
+              :src="`${base}images/partners/${n.img}`"
               :alt="n.name"
               class="max-h-full max-w-full object-contain h-full"
               style="width:auto;"
@@ -40,20 +40,20 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Autoplay } from "swiper/modules";
 import 'swiper/css'
 import "swiper/css/navigation"
-
+const base = useRuntimeConfig().app.baseURL
 const partners = [
-  { name: 'BTC', img: '/images/partners/btc.png' },
-  { name: 'Hitachi', img: '/images/partners/hitachi.png' },
-  { name: 'Honki', img: '/images/partners/Honki.png' },
-  { name: 'IVS', img: '/images/partners/ivs.png' },
-  { name: 'JTS', img: '/images/partners/jts.png' },
-  { name: 'Kaima', img: '/images/partners/kaima.png' },
-  { name: 'Mitech', img: '/images/partners/mitech.png' },
-  { name: 'NCS', img: '/images/partners/ncs.png' },
-  { name: 'NEC', img: '/images/partners/nec.svg' },
-  { name: 'Shinmei', img: '/images/partners/shinmei.svg' },
-  { name: 'Ubicom', img: '/images/partners/ubicom.png' },
-  { name: 'Veriserve', img: '/images/partners/veriserve.png' }
+  { name: 'BTC', img: 'btc.png' },
+  { name: 'Hitachi', img: 'hitachi.png' },
+  { name: 'Honki', img: 'Honki.png' },
+  { name: 'IVS', img: 'ivs.png' },
+  { name: 'JTS', img: 'jts.png' },
+  { name: 'Kaima', img: 'kaima.png' },
+  { name: 'Mitech', img: 'mitech.png' },
+  { name: 'NCS', img: 'ncs.png' },
+  { name: 'NEC', img: 'nec.svg' },
+  { name: 'Shinmei', img: 'shinmei.svg' },
+  { name: 'Ubicom', img: 'ubicom.png' },
+  { name: 'Veriserve', img: 'veriserve.png' }
 ]
 
 const prevEl = ref<HTMLElement | null>(null)

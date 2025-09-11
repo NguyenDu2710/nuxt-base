@@ -75,7 +75,10 @@
                 <p class="text-slate-700 text-base md:text-lg leading-relaxed">{{ p.subtitle }}</p>
 
                 <div class="pt-2">
-                  <button class="rounded-xl bg-sky-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-sky-700 transition">
+                  <NuxtLink v-if="p.link" target="_blank" :to="p.link" class="rounded-xl bg-sky-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-sky-700 transition">
+                    Xem chi tiết
+                  </NuxtLink>
+                  <button v-else class="rounded-xl bg-sky-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-sky-700 transition">
                     Xem chi tiết
                   </button>
                 </div>
@@ -84,7 +87,7 @@
               <!-- Right: image + features -->
               <div class="grid grid-cols-1 gap-6">
                 <div class="w-full h-72 sm:h-80 md:h-[380px] overflow-hidden ring-1 ring-slate-200 bg-gradient-to-br from-indigo-50 to-sky-50">
-                  <img v-if="p.img" :src="p.img" :alt="p.title" class="w-full h-full object-cover" />
+                  <img v-if="p.img" :src="`${base}images/products${p.img}`" :alt="p.title" class="w-full h-full object-cover" />
                   <div v-else class="w-full h-full flex items-center justify-center text-sm text-neutral-600">No image</div>
                 </div>
                 <ul v-if="p.bullets?.length" class="space-y-3">
@@ -118,7 +121,7 @@
             <div class="timeline-card md:text-right">
               <div class="flex flex-row-reverse md:flex-row items-start gap-2">
                 <div class="w-32 h-24 md:w-60 md:h-52 overflow-hidden rounded-ss-lg rounded-ee-lg bg-slate-100 shadow-inner shrink-0 border-2 border-sky-200">
-                  <img v-if="p.img" :src="p.img" :alt="p.title" class="w-full h-full object-cover" @click="open({ src: p.img, title: p.title })" />
+                  <img v-if="p.img" :src="`${base}images/products${p.img}`" :alt="p.title" class="w-full h-full object-cover" @click="open({ src: p.img, title: p.title })" />
                 </div>
                 <div class="flex-1">
                   <p class="text-xl font-bold text-slate-900">{{ p.title }}</p>
@@ -165,7 +168,7 @@
                   </div>
                 </div>
                 <div class="w-32 h-24 md:w-60 md:h-52 overflow-hidden rounded-ss-lg rounded-ee-lg bg-slate-100 shadow-inner shrink-0 border-2 border-sky-200">
-                  <img v-if="p.img" :src="p.img" :alt="p.title" class="w-full h-full object-cover" @click="open({ src: p.img, title: p.title })"/>
+                  <img v-if="p.img" :src="`${base}images/products${p.img}`" :alt="p.title" class="w-full h-full object-cover" @click="open({ src: p.img, title: p.title })"/>
                 </div>
               </div>
             </div>
@@ -196,6 +199,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import ImageModal from './ImageModal.vue'
+const base = useRuntimeConfig().app.baseURL
 
 export interface Product {
   id: string
@@ -204,6 +208,7 @@ export interface Product {
   subtitle: string
   bullets: string[]
   img?: string
+  link?: string
 }
 
 const modal = reactive<{ open: boolean; src: string; title: string; poster?: string, tip?: string }>({

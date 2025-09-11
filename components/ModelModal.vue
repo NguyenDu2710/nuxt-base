@@ -23,7 +23,7 @@
           <ClientOnly>
             <!-- @google/model-viewer -->
             <model-viewer
-              :src="src"
+              :src="`${base}models${src}`"
               :poster="poster"
               camera-controls
               auto-rotate
@@ -57,6 +57,8 @@ const props = defineProps<{
   title?: string
   poster?: string
 }>()
+
+const base = useRuntimeConfig().app.baseURL
 
 const emit = defineEmits<{
   (e: 'close'): void

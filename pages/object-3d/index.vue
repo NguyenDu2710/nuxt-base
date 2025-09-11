@@ -10,7 +10,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <article
           v-for="item in items"
-          :key="item.src"
+          :key="`${base}models${item.src}`"
           class="group cursor-pointer rounded-2xl bg-white dark:bg-neutral-900 shadow hover:shadow-lg transition overflow-hidden"
           @click="open(item)"
         >
@@ -18,7 +18,7 @@
             <ClientOnly>
               <!-- model-viewer dưới dạng thumbnail (poster tự render) -->
               <model-viewer
-                :src="item.src"
+                :src="`${base}models${item.src}`"
                 :poster="item.poster || ''"
                 camera-controls
                 disable-zoom
@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import ModelModal from '~/components/ModelModal.vue'
-
+const base = useRuntimeConfig().app.baseURL
 type Item = {
   title: string
   desc: string
@@ -66,27 +66,27 @@ type Item = {
 
 const items = ref<Item[]>([
   {
-    title: 'Trống ống Ông Sơn – Việt Nam',
+    title: 'Trống đồng Đông Sơn – Việt Nam',
     desc: 'Mô hình văn hoá, có thể xoay 360° để quan sát chi tiết.',
-    src: '/models/trong_ong_ong_son_-_viet_nam.glb',
+    src: '/trong_ong_ong_son_-_viet_nam.glb',
     tip: 'Một nhạc cụ cổ truyền với hình dáng đặc trưng, được mô phỏng dưới dạng 3D.'
   },
   {
     title: 'Nón lá Việt Nam',
     desc: 'Biểu tượng văn hoá Việt – view 360°.',
-    src: '/models/vietnamese___non_la.glb',
+    src: '/vietnamese___non_la.glb',
     tip: 'Chiếc nón hình chóp thanh thoát, thể hiện nét đẹp giản dị và truyền thống của người Việt.'
   },
   {
     title: 'Chùa Một Cột',
     desc: 'Di tích nổi tiếng ở Hà Nội – xoay để xem toàn cảnh.',
-    src: '/models/chua_mot_cot.glb',
+    src: '/chua_mot_cot.glb',
     tip: 'Ngôi chùa biểu tượng của Thăng Long – Hà Nội, được dựng giữa hồ Linh Chiểu.'
   },
   {
     title: 'Tượng Phật Nam – Chùa Som Rông (Sóc Trăng)',
     desc: 'Kiến trúc tôn giáo – xem 360° chi tiết.',
-    src: '/models/tuong_phat_nam_-_chua_som_rong_soc_trang.glb',
+    src: '/tuong_phat_nam_-_chua_som_rong_soc_trang.glb',
     tip: 'Tượng Phật Nam khổng lồ tại Chùa Som Rông, thu hút khách hành hương và du lịch.'
   },
 ])

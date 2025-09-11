@@ -20,4 +20,8 @@ export default defineNuxtConfig({
     shim: false
   },
   devtools: { enabled: true },
+  app: {
+    baseURL: '/product/',
+    buildAssetsDir: '/_nuxt/'
+  }
 })
