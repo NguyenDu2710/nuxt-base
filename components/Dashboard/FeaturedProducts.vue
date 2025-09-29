@@ -133,9 +133,12 @@
                       </li>
                   </ul>
                   <div class="mt-4 flex justify-end">
-                    <button class="rounded-lg bg-white px-3 py-1.5 text-sm font-semibold text-sky-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 transition">
+                    <button v-if="!p.link" class="rounded-lg bg-white px-3 py-1.5 text-sm font-semibold text-sky-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 transition">
                       Xem chi tiết
                     </button>
+                    <a v-else :href="`${base}${p.link}`" class="rounded-lg bg-white px-3 py-1.5 text-sm font-semibold text-sky-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 transition">
+                      Xem chi tiết
+                    </a>
                   </div>
                 </div>
               </div>

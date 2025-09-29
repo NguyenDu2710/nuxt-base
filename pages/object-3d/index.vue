@@ -89,6 +89,36 @@ const items = ref<Item[]>([
     src: '/tuong_phat_nam_-_chua_som_rong_soc_trang.glb',
     tip: 'Tượng Phật Nam khổng lồ tại Chùa Som Rông, thu hút khách hành hương và du lịch.'
   },
+  {
+  title: 'Kettlebell',
+  desc: 'Dụng cụ thể thao – xoay để quan sát chi tiết hình khối.',
+  src: '/kettlebell.glb',
+  tip: 'Mô hình tạ ấm (kettlebell) dùng trong các bài tập gym và rèn luyện thể lực.'
+},
+{
+  title: 'Xe tăng',
+  desc: 'Mô hình quân sự – quan sát từ nhiều góc độ.',
+  src: '/tank.glb',
+  tip: 'Mô phỏng xe tăng với chi tiết vũ khí và thân xe.'
+},
+{
+  title: 'Skateboard',
+  desc: 'Ván trượt thể thao – xem 360° chi tiết.',
+  src: '/skateboard.glb',
+  tip: 'Ván trượt dành cho biểu diễn và di chuyển đường phố.'
+},
+{
+  title: 'Xe Jeep',
+  desc: 'Xe địa hình – quan sát mô hình 3D.',
+  src: '/jeep-car.glb',
+  tip: 'Mô hình xe Jeep phong cách off-road, nổi bật với sự bền bỉ và mạnh mẽ.'
+},
+{
+  title: 'Ấm đun nước',
+  desc: 'Mô hình văn hóa/lịch sử – xem toàn cảnh.',
+  src: '/soviet.glb',
+  tip: 'Vật dụng thường ngày.'
+}
 ])
 
 const modal = reactive<{ open: boolean; src: string; title: string; poster?: string, tip?: string }>({
